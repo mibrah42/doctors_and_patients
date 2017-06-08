@@ -1,0 +1,18 @@
+<h1><%= @doctor.name %></h1>
+
+<ul class="list-unstyled list-group">
+
+    <% @doctor.consultations.each do |c| %>
+      <li><strong><%= c.patient.name %>: </strong> <%= c.description %>
+        <%= link_to "Delete", consultation_path(c), method: :delete  %>
+
+
+      </li>
+    <% end %>
+
+
+</ul>
+
+<%= render 'shared/form', doc: @doctor, cons: @consultation %>
+
+

@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <%= simple_form_for [doc, cons] do |f| %>
+      <%= f.input :description %>
+      <%= f.input :patient_id, collection: Patient.all, selected: Patient.first %>
+      <%= f.button :submit, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
